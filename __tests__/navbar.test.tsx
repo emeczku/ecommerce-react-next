@@ -1,14 +1,16 @@
-import { render, screen, within } from '@testing-library/react'
-import navbar from '../src/app/components/navbar'
+import { render } from '@testing-library/react'
+import Navbar from '@/app/components/Navbar'
+import { links } from '@/app/data/navbarLinks.json'
 
-test('home', () => {
-    render(<navbar />);
+test('renders all navbar items', () => {
+  const { getByRole } = render(<Navbar items={links} />)
+  const nav = getByRole('navigation')
+  expect(nav).toBeVisible()
 
-    const wrapper = within(screen.getByRole('nav'));
+  const navLinks = nav.querySelectorAll('a')
+  expect(navLinks.length).toBe(links.length)
 
-    expect(wrapper).toBeDefined()
-
-    const items = screen.getAllByRole('nav-item')
-
-    expect(items.length).toBe(4)
+  navLinks.forEach((item, index) => {
+    expect(navLinks[index].textContent).toBe(links[index].name)
+  })
 })
