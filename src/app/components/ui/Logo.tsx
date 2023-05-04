@@ -1,14 +1,9 @@
 import { FC } from 'react'
-import { Amatic_SC } from 'next/font/google'
-
-const satisfy = Amatic_SC({ subsets: ['latin'], weight: '700' })
+import logo from '@/app/assets/logo.png'
+import Image from 'next/image'
 
 const Logo: FC = () => {
-  return (
-    <h2 id="logo" className={satisfy.className}>
-      E-commerce
-    </h2>
-  )
+  return <Image className="logo" src={logo} alt="Logo" />
 }
 
 export default Logo
