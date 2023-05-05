@@ -1,22 +1,19 @@
 import { screen, render, fireEvent } from '@testing-library/react'
-import Search from '@/app/components/Search'
+import Search from '@/components/Search'
+import { describe } from 'vitest'
 
-test('renders search icon, open search bar and try to search for items', () => {
+describe('search', () => {
   render(<Search />)
 
-  const searchIcon = document.querySelector('#search-icon') as HTMLButtonElement
-  const searchBar = document.querySelector('#search-bar') as HTMLInputElement
+  const input = screen.getByRole('input')
 
-  expect(searchIcon).toBeVisible()
-  expect(searchBar).not.toBeVisible()
+  test('check visibility search input', () => {
+    expect(input).toBeVisible()
+  })
 
-  fireEvent.click(searchIcon)
-  expect(searchBar).toBeVisible()
-
-  fireEvent.change(searchBar, { target: { value: 'Shoe' } })
-  const searchValueElement = screen.getByText('Shoe', { exact: false })
-  expect(searchValueElement).toBeInTheDocument()
-
-  fireEvent.click(searchIcon)
-  expect(searchBar).not.toBeVisible()
+  test('search for items', () => {
+    fireEvent.change(input, { target: { value: 'Shoe' } })
+    const searchValueElement = screen.getByText('Shoe', { exact: false })
+    expect(searchValueElement).toBeInTheDocument()
+  })
 })
