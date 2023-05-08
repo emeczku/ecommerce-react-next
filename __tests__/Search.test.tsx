@@ -1,11 +1,11 @@
 import { screen, render, fireEvent } from '@testing-library/react'
-import Search from '@/components/Search'
+import Search from '@/components/Search.tsx'
 import { describe } from 'vitest'
 
 describe('search', () => {
   render(<Search />)
 
-  const input = screen.getByRole('input')
+  const input = screen.getByRole('searchbox')
 
   test('check visibility search input', () => {
     expect(input).toBeVisible()
