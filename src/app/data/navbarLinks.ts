@@ -5,16 +5,20 @@ interface Item {
 
 const items: Item[] = [
   {
-    name: 'home',
+    name: 'Browse',
     url: '/',
   },
   {
-    name: 'products',
-    url: '/products',
+    name: 'About',
+    url: '/',
   },
   {
-    name: 'contact',
-    url: '/contact',
+    name: 'Help',
+    url: '/',
+  },
+  {
+    name: 'Sell',
+    url: '/',
   },
 ]
 

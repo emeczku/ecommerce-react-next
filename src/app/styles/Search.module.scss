@@ -1,0 +1,18 @@
+.search {
+  height: 38px;
+  max-width: 500px;
+  width: 250%;
+  border: 1px solid black;
+  padding: 10px;
+  transition: 0.3s;
+  margin: auto;
+}
+
+.results {
+  z-index: 101;
+  width: 100vw;
+  min-width: 100px;
+  position: absolute;
+  left: 0;
+  top: 200px;
+}
