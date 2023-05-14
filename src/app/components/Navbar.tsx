@@ -3,7 +3,7 @@ import Logo from '@/components/ui/Logo'
 import Link from 'next/link'
 import navbarLinks from '@/data/navbarLinks'
 import Search from '@/components/Search'
-import { Button } from '@/components/ui/Button'
+import { VariationLink } from '@/components/ui/Link'
 
 const Navbar: FC = () => {
   return (
@@ -26,12 +26,12 @@ const Navbar: FC = () => {
           </div>
         </div>
         <div className="flex w-1/4 justify-end">
-          <Button intent="primary" size="small">
+          <VariationLink intent="primary" size="small" href="login">
             Login
-          </Button>
-          <Button intent="secondary" size="small">
+          </VariationLink>
+          <VariationLink intent="secondary" size="small" href="signup">
             Sign Up
-          </Button>
+          </VariationLink>
         </div>
       </div>
     </nav>

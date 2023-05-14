@@ -6,19 +6,19 @@ interface Item {
 const items: Item[] = [
   {
     name: 'Browse',
-    url: '/',
+    url: 'browse',
   },
   {
     name: 'About',
-    url: '/',
+    url: 'about',
   },
   {
     name: 'Help',
-    url: '/',
+    url: 'help',
   },
   {
     name: 'Sell',
-    url: '/',
+    url: 'sell',
   },
 ]
 
