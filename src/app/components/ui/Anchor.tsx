@@ -22,6 +22,7 @@ interface AnchorProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
     VariantProps<typeof anchor> {
   href: string
+  name: string
 }
 
 const Anchor: React.FC<AnchorProps> = ({ intent, name, href }) => (
