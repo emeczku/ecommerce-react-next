@@ -5,4 +5,5 @@ export interface Sneaker {
   image: string
   condition: string
   status: string
+  price: number
 }

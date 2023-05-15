@@ -2,6 +2,7 @@ import { FC } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Sneaker } from '@/types'
+import styles from '@/styles/HorizontalList.module.scss'
 
 interface HorizontalListProps {
   heading: string
@@ -10,20 +11,23 @@ interface HorizontalListProps {
 
 const HorizontalList: FC<HorizontalListProps> = ({ heading, items }) => {
   return (
-    <div className={'m-4'}>
-      <h3 className={'font-medium text-lg mb-5'}>{heading}</h3>
-      <div className={'grid grid-cols-6 gap-6'}>
+    <div className={'mt-5 mb-5 mx-auto max-w-screen-xl'}>
+      <h3 className={'font-medium text-lg m-3'}>{heading}</h3>
+      <div className={styles.container}>
         {items.map((item: Sneaker, index: number) => {
           return (
-            <div
-              key={index}
-              className={'pl-4 pr-4 pt-10 pb-10 border border-gray-200'}>
-              <Image src={item.image} alt={item.name} width={140} height={75} />
-              <Link
-                href={item.name}
-                className={'text-sm text-truncate max-h-3'}>
+            <div key={index} className={styles.item}>
+              <Image
+                src={item.image}
+                alt={item.name}
+                className={styles.image}
+                width={140}
+                height={80}
+              />
+              <Link href={item.name} className={styles.link}>
                 {item.name}
               </Link>
+              <span className={styles.price}>${item.price}</span>
             </div>
           )
         })}
