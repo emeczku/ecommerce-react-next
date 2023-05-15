@@ -8,7 +8,7 @@ import Anchor from '@/components/ui/Anchor'
 const Navbar: FC = () => {
   return (
     <nav>
-      <div className="flex items-center ml-10 mr-10">
+      <div className="flex items-center ml-10 mr-10 pt-8 pb-8">
         <div className="flex w-1/2 justify-left">
           <Logo />
           <Search />
